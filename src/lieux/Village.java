@@ -1,4 +1,4 @@
-package personnages;
+package lieux;
 
 public class Village {
 	private String nom;

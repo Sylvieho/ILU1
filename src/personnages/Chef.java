@@ -26,4 +26,8 @@ public class Chef {
 				romain.getNom());
 		romain.recevoirCoup(force / 3);
 	}
+
+	public String getNom() {
+		return nom;
+	}
 }

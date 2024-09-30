@@ -70,13 +70,15 @@ public class Romain {
 		texte = "Ma force est de " + this.force + ", et la force du coup est de " + forceCoup;
 		int resistanceEquipement = 0;
 		if (nbEquipement != 0) {
-			texte += "\nMais heureusement, grace à mon équipement saforce est diminué de ";
+			texte += "\nMais heureusement, grace à mon équipement sa force est diminué de ";
 			for (int i = 0; i < nbEquipement; i++) {
-				if ((equipements[i] != null && equipements[i].equals(Equipement.BOUCLIER))) {
+				if (equipements[i].equals(Equipement.BOUCLIER)) {
 					resistanceEquipement += 8;
-				} else {
-					System.out.println("Equipement casque");
-					resistanceEquipement += 5;
+				} else	{
+					if(equipements[i].equals(Equipement.CASQUE)){
+						System.out.println("Equipement casque");
+						resistanceEquipement += 5;
+					}
 				}
 			}
 			texte += resistanceEquipement + "!";
@@ -85,7 +87,8 @@ public class Romain {
 		forceCoup -= resistanceEquipement;
 		return forceCoup;
 		}
-		private Equipement[] ejecterEquipement() {
+	
+	private Equipement[] ejecterEquipement() {
 		Equipement[] equipementEjecte = new Equipement[nbEquipement];
 		System.out.println("L'équipement de " + nom + "s'envole sous la force du coup.");
 		//TODO
